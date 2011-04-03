@@ -1,0 +1,9 @@
+#Sun Apr 03 11:49:45 BRT 2011
+eclipse.preferences.version=1
+encoding//timesheet/horas/admin.py=utf-8
+encoding//timesheet/horas/models.py=utf-8
+encoding//timesheet/horas/templates/lanca.html=UTF-8
+encoding//timesheet/horas/templates/lancamento.html=UTF-8
+encoding//timesheet/horas/templates/registration/login.html=UTF-8
+encoding//timesheet/horas/templatetags/template_local.py=utf-8
+encoding//timesheet/horas/views.py=utf-8

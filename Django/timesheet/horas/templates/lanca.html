@@ -1,0 +1,18 @@
+{% load template_local %}
+<html>
+<head>
+<title>Lançamento de Horas da Q10</title>
+<script type="text/javaScript" src="{{ ""|MEDIA_URL }}js/jquery-1.4.2.min.js"></script>
+<script type="text/javaScript" src="{{ ""|MEDIA_URL }}js/funcoes.js"></script>
+<link href="{{ ""|MEDIA_URL }}css/estilos.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<form action="." method="post">{% csrf_token %}
+<table>
+	{{formulario}}
+</table>
+<input type="submit" value="Lança Horas" />
+</form>
+
+</body>

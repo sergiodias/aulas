@@ -1,0 +1,49 @@
+{% load template_local %}
+<html>
+<head>
+<title>Lançamento de Horas da Q10</title>
+<script type="text/javaScript" src="{{ ""|MEDIA_URL }}js/jquery-1.4.2.min.js"></script>
+<script type="text/javaScript" src="{{ ""|MEDIA_URL }}js/funcoes.js"></script>
+<link href="{{ ""|MEDIA_URL }}css/estilos-{{cliente|lower}}.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<form action="." method="post">{% csrf_token %}
+<input type="Hidden" name = "id" value={{lancamento.id }} />
+<div class="entrada">
+<span class="prompt">Projeto</span>
+<select name="projeto" value = "{{lancamento.projeto}}">
+	{% for prj in projetos %}
+    <option value="{{prj.id}}">{{prj.nome}}</option>
+	{% endfor %}
+</select>
+</div> 
+<div class="entrada">
+<span class="prompt">Atividade</span>
+<select name="atividade" value = "{{lancamento.atividade}}">
+	{% for ativ in atividades %}
+    <option value="{{ativ.id}}">{{ativ.nome}}</option>
+	{% endfor %}
+</select>
+</div> 
+
+<div class="entrada">
+<span class="prompt">Descrição</span><input type="text" name="descricao" 
+	value = "{{lancamento.descricao}}" size="80" maxlenght="200"/>
+</div> 
+<div class="entrada">
+<span class="prompt">Data</span><input type="date" name="data" 
+	value = "{{lancamento.data}}" required="required" size="10" min="2011-01-01" max="2011-12-31"/>
+</div> 
+<div class="entrada">
+<span class="prompt">Hora de Início</span><input type="time" name="hora_inicial" 
+	value = "{{lancamento.hora_inicial}}" required="required" size="8"/> 
+</div> 
+<div class="entrada">
+<span class="prompt">Minutos</span><input type="number" name="minutos" size="4" 
+		value = "{{lancamento.minutos}}" min="0" max = "1440"/> 
+</div> 
+<input type="submit" value="Lança Horas" />
+</form>
+
+</body>
